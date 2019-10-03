@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Caveat+Brush|Frijole|Luckiest+Guy&display=swap');
+/* font-family: 'Caveat', cursive;
+font-family: 'Caveat Brush', cursive;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Frijole', cursive; */
+
+body {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 24px;
+    background-color: #daf6ff;
+}
+
+header {
+    font-family: 'Frijole', cursive;
+    font-size: 44px;
+    text-align: center;
+}
+
+#result-text {
+    font-family: 'Frijole', cursive;
+    font-size: 24px;
+}
+
+section {
+    text-align: center;
+}
+
+#rules-section {
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgoldenrodyellow;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 15px;
+    margin: 15px;
+}
+
+#rules-section-div {
+    width: 55%;
+    /* background-color: blueviolet; */
+    display: block, none;
+    margin-left: auto;
+    margin-right: auto;
+    /* text-align: center; */
+}
+
+#instructions-title {
+    font-weight: bold;
+    font-size: 44px;
+}
+
+#play-section {
+    display: none;
+}
+
+.hands-section {
+    margin: 30px;
+}
+
+#challenge {
+    text-decoration: underline;    
+}
+
+img {
+    width: 150px;
+}
+
+.radio-image,
+#computer-result-img {
+    /* enlarging this border 5px => 25px resulting in some unintentional, but decent 'animation' */
+    border: 25px solid transparent;
+    border-radius: 100%;
+    /* width: 50px; */
+}
+
+#computer-result-img {
+    border: 5px solid red;
+}
+
+input:checked + .radio-image {
+    border: 5px solid steelblue;
+}
+
+input {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+label {
+    text-align: center;
+}
+
+.button {
+  /* display: block; */
+  padding: 15px 25px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4997e6;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+    background-color: #4997e6
+}
+
+.button:active {
+  background-color: #4997e6;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
