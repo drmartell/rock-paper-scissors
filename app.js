@@ -59,6 +59,7 @@ function displayGame() {
     footerElement.className = 'hidden';
 }
 
+let isQuestionMark = true;
 // aggregate function
 function doChallenge() {
     const userThrow = getUserThrow();
@@ -67,6 +68,15 @@ function doChallenge() {
     if (!confirmUserHasChosen(userThrow)) {
         updateResultTextArea('Please select your hand gesture (above)');
         // alert('Please select your gesture (hand)');
+        return;
+    }
+
+    console.log(isQuestionMark);
+    if (!isQuestionMark) {
+        computerResultImg.src = './assets/question-mark2.png';
+        document.getElementById('start').checked = true;
+        updateResultTextArea(`Win, Lose, or Draw...`);
+        isQuestionMark = true;
         return;
     }
 
@@ -84,6 +94,8 @@ function doChallenge() {
 
     // update the UI with totals
     displayTotals();
+    
+    isQuestionMark = false;
 }
 
 // obtain the user throw
@@ -124,7 +136,7 @@ function updateTotals(theUserThrow, theComputerThrow) {
 }
 
 function displayTotals() {
-    totalsTextElement.innerHTML = `Games: ${games}<br>Wins: ${wins}<br>Losses: ${losses}`;
+    totalsTextElement.innerHTML = `Games: ${games}<br>Wins: ${wins}<br>Losses: ${losses}<br> Draws: ${games - wins - losses}`;
 }
 
 function updateResultTextArea(someString) {
