@@ -4,9 +4,11 @@ import checkResult from './utils.js';
 // store DOM elements
 // buttons
 const playButton = document.getElementById('play-button');
-const challengeButton = document.getElementById('challenge-button');
+// const challengeButton = document.getElementById('challenge-button');
+const computerImgAsButton = document.getElementById('computer-result-img');
 const resetButton = document.getElementById('reset-button');
 const rulesButton = document.getElementById('rules-button');
+const footerElement = document.getElementById('footer');
 // divs, sections
 const rulesSectionDiv = document.getElementById('rules-section-div');
 const playSection = document.getElementById('play-section');
@@ -24,7 +26,8 @@ resetGame();
 
 // add event listeners
 playButton.addEventListener('click', displayGame);
-challengeButton.addEventListener('click', doChallenge);
+// challengeButton.addEventListener('click', doChallenge);
+computerImgAsButton.addEventListener('click', doChallenge);
 resetButton.addEventListener('click', resetGame);
 rulesButton.addEventListener('click', displayRules);
 
@@ -46,12 +49,14 @@ function resetGame() {
 function displayRules() {
     rulesSectionDiv.style.display = 'block';
     playSection.style.display = 'none';
+    footerElement.className = '';
 }
 
 // show the game area and hide the instructions area
 function displayGame() {
     rulesSectionDiv.style.display = 'none';
     playSection.style.display = 'block';
+    footerElement.className = 'hidden';
 }
 
 // aggregate function

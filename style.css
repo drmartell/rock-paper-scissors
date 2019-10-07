@@ -59,27 +59,49 @@ section {
 }
 
 #challenge {
-    text-decoration: underline;    
+    /* text-decoration: underline;     */
+    color: red;
 }
 
 img {
     width: 150px;
+    box-shadow: 0 9px #999;
 }
 
-.radio-image,
-#computer-result-img {
+img:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.radio-image {
     /* enlarging this border 5px => 25px resulting in some unintentional, but decent 'animation' */
-    border: 25px solid transparent;
+    border: 10px solid white;
     border-radius: 100%;
-    /* width: 50px; */
 }
 
+/* https://alligator.io/js/simple-page-fade-in/ */
 #computer-result-img {
-    border: 5px solid red;
+    opacity: 1;
+    transition: 2.0s opacity;
+
+    border: 10px solid red;
+    border-radius: 100%;
+
+    /* box-shadow: 0 9px #999; */
+}
+
+/* #computer-result-img:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+} */
+  
+#computer-result-img.fade {
+    opacity: 0;
+    transition: none;
 }
 
 input:checked + .radio-image {
-    border: 5px solid steelblue;
+    border: 10px solid steelblue;
 }
 
 input {
@@ -110,6 +132,7 @@ label {
 }
 
 .button:hover {
+    color: yellow;
     background-color: #4997e6
 }
 
@@ -117,4 +140,19 @@ label {
   background-color: #4997e6;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+/* https://codepen.io/ianaya89/pen/qEqWWB */
+.show {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+  
+.hide {
+opacity: 0;
+transition: opacity 1000ms;
+}
+
+footer {
+    text-align: center;
 }
