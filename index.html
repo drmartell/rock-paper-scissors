@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock, Paper, Scissors - The Classic Game</title>
+</head>
+
+<body>
+    <header>
+        R.P.S. Classic!!!
+    </header>
+    <div id="rules-section-div">
+    <section id="rules-section">
+    A game of hand gestures with 3 simple rules:<br>
+        paper beats rock<br>
+        rock beats scissors<br>
+        scissors beats papers<br><br>
+        <span id="instructions-title">How to play:</span><br>
+        On the next screen...<br>
+        1. select your rock, paper, or scissors hand<br>
+        2. hit the red <span id="challenge">?</span> to reveal the computer's hand!<br><br>
+        <button class="button" id="play-button">PLAY!</button>
+    </section>
+    </div>
+    <section id="play-section">
+    <!-- MIGHT MAKE THIS 'SWAP' OUT WITH THE INSTRUCTIONS TO GIVE A MORE COMPACT UX -->
+        <section class="hands-section">
+            <!-- images sourced from: https://publicdomainvectors.org/en/free-clipart/Rock-Paper-Scissors/51207.html -->
+            <label>
+                <!-- Rock -->
+                <input name="gesture" value="start" type="radio" id="start" checked />
+            </label>
+            <label>
+                <!-- Rock -->
+                <input name="gesture" value="rock" type="radio" />
+                <img class="radio-image" src="./assets/rock.png">
+            </label>
+            <label>
+                <!-- Paper -->
+                <input name="gesture" value="paper" type="radio" />
+                <img class="radio-image" src="./assets/paper.png">
+            </label>
+            <label>
+                <!-- Scissors -->
+                <input name="gesture" value="scissors" type="radio" />
+                <img class="radio-image" src="./assets/scissors.png">
+            </label>
+        </section>
+        <section id="computer-result">
+            <!-- question mark image from: https://www.konfest.com/product/free-png-question-mark-32/ -->
+            <img id="computer-result-img" src="./assets/question-mark2.png" />
+        </section>
+        <div id='result-text'></div>
+        <div id='totals-text'>Please select a gesture (hand) above. Change your choice at any time.</div><br>
+        <!-- <button class="button" id="challenge-button">CHALLENGE!</button>&nbsp -->
+        <button class="button" id="reset-button">Reset Scores</button>&nbsp
+        <button class="button" id="rules-button">How To</button>&nbsp
+    </section>
+    <footer id='footer' class=''>
+        <p>Built @<a href='https://www.alchemycodelab.com/'>alchemy</a> by 'Canadian Casey'</p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
