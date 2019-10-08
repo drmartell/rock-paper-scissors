@@ -4,7 +4,7 @@ import checkResult from './utils.js';
 // store DOM elements
 // buttons
 const playButton = document.getElementById('play-button');
-// const challengeButton = document.getElementById('challenge-button');
+const playerButtons = document.getElementsByTagName('input');
 const computerImgAsButton = document.getElementById('computer-result-img');
 const resetButton = document.getElementById('reset-button');
 const rulesButton = document.getElementById('rules-button');
@@ -26,7 +26,13 @@ resetGame();
 
 // add event listeners
 playButton.addEventListener('click', displayGame);
-// challengeButton.addEventListener('click', doChallenge);
+Array.from(playerButtons).forEach(buttn => {
+    buttn.addEventListener('click', () => {
+        computerResultImg.src = './assets/question-mark2.png';
+        updateResultTextArea(`Win, Lose, or Draw...`);
+        isQuestionMark = true;
+    });
+});
 computerImgAsButton.addEventListener('click', doChallenge);
 resetButton.addEventListener('click', resetGame);
 rulesButton.addEventListener('click', displayRules);
@@ -71,7 +77,6 @@ function doChallenge() {
         return;
     }
 
-    console.log(isQuestionMark);
     if (!isQuestionMark) {
         computerResultImg.src = './assets/question-mark2.png';
         document.getElementById('start').checked = true;
